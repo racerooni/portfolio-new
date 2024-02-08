@@ -8,7 +8,8 @@ export const sendEmail = async (formData: FormData) => {
     const msg = formData.get("senderMsg");
     const senderEmail = formData.get("senderEmail")
 
-    if (!msg || !senderEmail || typeof msg !== "string") {
+    try {
+        if (!msg || !senderEmail || typeof msg !== "string") {
         return {
             error: "Hibás uzenet"
         }
@@ -19,5 +20,10 @@ export const sendEmail = async (formData: FormData) => {
         subject: "Portfolio message",
         text: `Email cím: ${senderEmail} \n Uzenet:${msg}`
     })
+    } catch {
+
+    }
+
+    
   };
 

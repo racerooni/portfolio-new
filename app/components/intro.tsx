@@ -3,15 +3,13 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsGithub } from "react-icons/bs";
-import { FaDownload, FaLinkedin } from "react-icons/fa";
+import { BsArrowBarRight, BsGithub } from "react-icons/bs";
+import { FaArrowRight, FaDownload, FaLinkedin } from "react-icons/fa";
 import { BsDownload } from "react-icons/bs";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import hu from "@/public/hu-1-32.png";
 import en from "@/public/gb-1-32.png";
-import ReactCountryFlag from "react-country-flag";
-import Huicon from "./huicon";
 
 export default function Intro() {
   const { ref, inView } = useInView({
@@ -75,17 +73,17 @@ export default function Intro() {
           </Link>
           <div className="w-[17rem] py-3 bg-gray-950 text-white rounded-full flex gap-3 ps-4 transition duration-300 w-100 hover:scale-105">
             <div className="flex justify-center items-center gap-2 ">
-              Töltsd le a CV-m! <BsDownload />
+              Töltsd le a CV-m! <FaArrowRight />
             </div>
             <div className="text-white border-l-[1px] border-gray-500 flex ps-2 items center justify-between">
-              <a href="/CV.pdf" className="pe-2" download={true}>
+              <a href="/JB_CV_HU.pdf" className="pe-2" download={true}>
                 <img
                   src={hu.src}
                   alt="hu"
                   className="w-6 h-6 border border-black/10 rounded-[100%] transition duration-300 hover:scale-125"
                 />
               </a>
-              <a href="/CV.pdf" className="pe-2" download={true}>
+              <a href="/JB_CV_EN.pdf" className="pe-2" download={true}>
                 <img
                   src={en.src}
                   alt="hu"

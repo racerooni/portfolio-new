@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useEffect } from "react";
 import { sendEmail } from "@/actions/sendemail";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref, inView } = useInView({
@@ -37,7 +38,12 @@ export default function Contact() {
         <form
           className="mt-10 flex flex-col"
           action={async (formData) => {
-            await sendEmail(formData);
+            try {
+              await sendEmail(formData);
+              toast.success("Email sikeresen elkuldve.");
+            } catch (error) {
+              console.log(error);
+            }
           }}
         >
           <input
