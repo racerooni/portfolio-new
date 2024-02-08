@@ -4,10 +4,14 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
+import { FaDownload, FaLinkedin } from "react-icons/fa";
 import { BsDownload } from "react-icons/bs";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import hu from "@/public/hu-1-32.png";
+import en from "@/public/gb-1-32.png";
+import ReactCountryFlag from "react-country-flag";
+import Huicon from "./huicon";
 
 export default function Intro() {
   const { ref, inView } = useInView({
@@ -62,21 +66,36 @@ export default function Intro() {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
       >
-        <div className="flex gap-3.5 justify-center flex-col items-center md:flex-row">
+        <div className="flex gap-3.5 justify-center flex-col items-center">
           <Link
             href="#contact"
             className="bg-blue-600 text-white px-4 md:px-7 py-3 flex items-center gap-2 rounded-full hover:bg-blue-500 transition duration-300 w-100 hover:scale-105 font-medium border border-blue-950/10 focus:scale-105 w-[15rem] md:w-auto"
           >
             Vedd fel velem a kapcsolatot! 👈
           </Link>
+          <div className="w-[17rem] py-3 bg-gray-950 text-white rounded-full flex gap-3 ps-4 transition duration-300 w-100 hover:scale-105">
+            <div className="flex justify-center items-center gap-2 ">
+              Töltsd le a CV-m! <BsDownload />
+            </div>
+            <div className="text-white border-l-[1px] border-gray-500 flex ps-2 items center justify-between">
+              <a href="/CV.pdf" className="pe-2" download={true}>
+                <img
+                  src={hu.src}
+                  alt="hu"
+                  className="w-6 h-6 border border-black/10 rounded-[100%] transition duration-300 hover:scale-125"
+                />
+              </a>
+              <a href="/CV.pdf" className="pe-2" download={true}>
+                <img
+                  src={en.src}
+                  alt="hu"
+                  className="w-6 h-6 border border-black/10 rounded-[100%] transition duration-300 hover:scale-125 "
+                />
+              </a>
+            </div>
+          </div>
         </div>
-        <a
-          href="/CV.pdf"
-          download={true}
-          className="flex justify-center items-center mx-auto bg-gray-900 text-white px-7 py-3 rounded-full hover:bg-gray-700 transition duration-300 hover:scale-105 font-medium border-black/10 focus:scale-105 w-[10rem] md:w-auto"
-        >
-          Töltsd le a CV-m! <BsDownload className="ms-2 h-4 w-4" />
-        </a>
+
         <div className="flex gap-3.5 mx-auto">
           <a
             href="https://www.linkedin.com/in/benedek-jaczenko-7a25a4249/"

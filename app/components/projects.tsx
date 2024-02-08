@@ -5,6 +5,21 @@ import { projektjeim } from "@/lib/data";
 import Project from "./project";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { motion } from "framer-motion";
+
+const fadeIn = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.08 * i,
+    },
+  }),
+};
 
 export default function Projects() {
   const { ref, inView } = useInView({
@@ -21,9 +36,18 @@ export default function Projects() {
       <SectionHeader cim="Projektjeim:" />
       <div className="flex flex-col gap-4">
         {projektjeim.map((projekt, i) => (
-          <React.Fragment key={i}>
+          <motion.div
+            key={i}
+            variants={fadeIn}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={i}
+          >
             <Project {...projekt} />
-          </React.Fragment>
+          </motion.div>
         ))}
       </div>
     </section>

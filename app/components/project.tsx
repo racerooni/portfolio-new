@@ -26,7 +26,7 @@ const Project: React.FC<ProjectProps> = ({
             {tags.map((tag, i) => (
               <li
                 key={i}
-                className="bg-gray-700 text-white rounded-xl py-1 px-2 text-xs"
+                className="bg-gray-700 text-white rounded-xl py-1 px-2 text-xs transition duration-300 hover:scale-110"
               >
                 {tag}
               </li>

@@ -19,10 +19,6 @@ export const links = [
     url: "#projects",
   },
   {
-    name: "Tapasztalat",
-    url: "#exp",
-  },
-  {
     name: "Kapcsolat",
     url: "#contact",
   },

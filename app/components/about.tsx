@@ -19,12 +19,12 @@ export default function About() {
   return (
     <section
       ref={ref}
-      className="w-full md:w-2/3 lg:w-1/2 text-center px-6 scroll-mt-16"
+      className="w-full md:w-2/3 lg:w-1/2 text-center px-6 scroll-mt-64 mb-8"
       id="about"
     >
       <SectionHeader cim="Rólam" />
       <motion.p
-        className="leading-7"
+        className="leading-7 text-lg"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
       >
