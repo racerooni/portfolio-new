@@ -40,9 +40,9 @@ export default function Contact() {
           action={async (formData) => {
             try {
               await sendEmail(formData);
-              toast.success("Email sikeresen elkuldve.");
+              toast.success("E-mail sikeresen elküldve!");
             } catch (error) {
-              console.log(error);
+              toast.error("Hiba történt!");
             }
           }}
         >
@@ -52,14 +52,16 @@ export default function Contact() {
             name="senderEmail"
             placeholder="Az e-mail címed"
             maxLength={300}
+            required
           />
           <textarea
             className="h-32 my-3 px-2 py-2 rounded-md border border-black/15 resize-none outline-slate-900"
             name="senderMsg"
             placeholder="Üzenet"
-            maxLength={600}
+            maxLength={2000}
+            required
           />
-          <button className="py-2 px-3 bg-gray-900 text-white rounded-md transition duration-300 hover:bg-gray-800 w-[8rem] h-[3rem] flex justify-center items-center gap-2 hover:scale-110 text-md outline-slate-900 focus:outline-slate-900">
+          <button className="py-2 px-3 bg-blue-600 text-white rounded-md transition duration-300 w-[8rem] h-[3rem] flex justify-center items-center gap-2 hover:scale-110 text-md hover:bg-white hover:text-blue-600 hover:border-2 hover:border-black/10 ">
             Küldés <IoIosSend />
           </button>
         </form>
