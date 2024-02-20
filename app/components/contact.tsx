@@ -3,7 +3,7 @@ import SectionHeader from "./section-header";
 import { IoIosSend } from "react-icons/io";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { sendEmail } from "@/actions/sendemail";
 import toast from "react-hot-toast";
 
@@ -18,6 +18,13 @@ export default function Contact() {
     }
   }, [inView, setActiveSection, timeOfLastClick]);
 
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSent(false)
+    }, 10000);
+  }, [sent])
   return (
     <section
       ref={ref}
@@ -38,13 +45,19 @@ export default function Contact() {
         <form
           className="mt-10 flex flex-col"
           action={async (formData) => {
-            try {
-              await sendEmail(formData);
-              toast.success("E-mail sikeresen elküldve!");
-            } catch (error) {
-              toast.error("Hiba történt!");
+            if (!sent) {
+              try {
+                await sendEmail(formData);
+                toast.success("E-mail sikeresen elküldve!");
+                setSent(true);
+              } catch (error) {
+                toast.error("Hiba történt!");
+              }
+            } else if (sent) {
+              toast.error('Egyszerre csak egy e-mailt küldhet.')
             }
-          }}
+            }
+            }
         >
           <input
             type="email"
@@ -61,7 +74,8 @@ export default function Contact() {
             maxLength={2000}
             required
           />
-          <button className="py-2 px-3 bg-blue-600 text-white rounded-md transition duration-300 w-[8rem] h-[3rem] flex justify-center items-center gap-2 hover:scale-110 text-md hover:bg-white hover:text-blue-600 hover:border-2 hover:border-black/10 ">
+          <button className="py-2 px-3 bg-blue-600 text-white rounded-md transition duration-300 w-[8rem] h-[3rem] flex justify-center items-center gap-2 hover:scale-110 text-md hover:bg-white hover:text-blue-600 hover:border-2 hover:border-black/10 "
+           >
             Küldés <IoIosSend />
           </button>
         </form>
