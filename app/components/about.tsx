@@ -12,7 +12,7 @@ export default function About() {
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Rólam");
+      setActiveSection("About me");
     }
   }, [inView, setActiveSection, timeOfLastClick]);
 
@@ -22,38 +22,33 @@ export default function About() {
       className="w-full md:w-2/3 lg:w-1/2 text-center px-6 scroll-mt-64 mb-8"
       id="about"
     >
-      <SectionHeader cim="Rólam" />
+      <SectionHeader cim="About me" />
       <motion.p
         className="leading-7 text-lg"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
       >
-        Középiskolás éveim után, a{" "}
-        <span className="font-bold">váci Boronkay György Technikumában </span>
-        egy <span className="underline">2</span> éves OKJ-s képzésbe kezdtem,
-        ahol beleszerettem a <span className="font-bold">webfejlesztésbe</span>.
-        A programozás világának ez a része keltette fel legjobban az
-        érdeklődésemet, mivel ez az ágazat állandó kihívásokat és
-        változatosságot kínál. Ahogy a technológia fejlődik, mindig új kihívások
-        és lehetőségek merülnek fel, és én mindig izgatottan várom, hogy
-        megismerhessem és megérthessem ezeket. A technológiák amikkel dolgoztam
-        tartalmazzák a következőket:{" "}
+        After my high school years, I continued my studies at the{" "}
+        <span className="font-bold">Boronkay György Technikum</span> in Vác
+        where I completed a <span className="underline">2</span> year long
+        course. During my studies here I found my passion in{" "}
+        <span className="font-bold">web development</span>. Out of all the
+        fields software development has, this one aroused my interest the most,
+        since it offers new challenges, new things to learn every once in a
+        while. I am always eager to learn new frameworks as they pop up from
+        nowhere. So far the frameworks/technologies I've worked with include:{" "}
         <span className="underline">
-          TypeScript, React, Next.JS, MySQL, Prisma{" "}
+          TypeScript, React, Next.JS, MySQL, Prisma, Node.js{" "}
         </span>
-        illetve kisebb hétvégi projektek alatt{" "}
-        <span className="underline">Node.js-t </span>is alkalmaztam, ezen felül
-        tanulmányaim alatt a <span className="italic">C#, Python, PHP</span>{" "}
-        világába is beismerést nyerhettem. Idegen nyelvek amiket beszélek:{" "}
-        <span className="font-bold">Angol (C1)</span>
-      </motion.p>
-      <motion.p
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        className="mt-4"
-      >
-        A programozáson kívűl szeretek nyelveket tanulni, videójátékokkal
-        játszani és egyaránt utazni is.
+        and thanks to my assignments I had the opportunity to master{" "}
+        <span className="underline">Python, C#, Python, PHP</span>although on a
+        much lower level than the ones I mentioned above. In my free time I love
+        playing video games, watch series, or even travel but what I love the
+        most is learning new things such as languages. <br />
+        Languages spoken:{" "}
+        <span className="font-bold">
+          Hungarian (native), English (Fluent), German (basic)
+        </span>
       </motion.p>
     </section>
   );

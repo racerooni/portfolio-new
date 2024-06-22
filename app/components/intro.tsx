@@ -18,7 +18,7 @@ export default function Intro() {
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Kezdőlap");
+      setActiveSection("Home");
     }
   }, [inView, setActiveSection, timeOfLastClick]);
 
@@ -52,12 +52,12 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Helló, Benedek vagyok.</span>{" "}
-        <span className="italic">Junior</span> szintű webfejlesztő. Örülök, hogy
-        meglátogattad a portfólióm. A fő technológiám a{" "}
-        <span className="underline">React(Next.js)</span>.{" "}
-        <span className="font-bold">Front-end</span> webfejlesztőként a célom
-        az, hogy minél felhasználóbarátabb weboldalakat hozzak létre.
+        <span className="font-bold">Hi, I am Benedek.</span> A{" "}
+        <span className="italic">Full-stack</span> web developer. I am glad that
+        you visited my portfolio page. The main technology that I'm using in my
+        everyday life is <span className="underline">React(Next.js)</span>. As a
+        <span className="font-bold">Full-stack</span> developer my goal is to
+        deliver the most user-friendly and reliable web-applications possible.
       </motion.p>
       <motion.div
         className="flex justify-center w-1/2 mx-auto flex-col gap-3.5"
@@ -67,31 +67,21 @@ export default function Intro() {
         <div className="flex gap-3.5 justify-center flex-col items-center">
           <Link
             href="#contact"
-            className="bg-blue-600 text-white px-4 md:px-7 py-3 flex items-center gap-2 rounded-full hover:bg-blue-500 transition duration-300 w-100 hover:scale-105 font-medium border border-blue-950/10 focus:scale-105 w-[15rem] md:w-auto"
+            className="bg-blue-600 text-white px-4 md:px-7 py-3 flex items-center gap-2 rounded-full hover:bg-blue-500 transition duration-300 w-100 hover:scale-105 font-medium border border-blue-950/10 focus:scale-105 max-w-[15rem] md:w-auto"
           >
-            Vedd fel velem a kapcsolatot! 👈
+            Contact me! 👈
           </Link>
-          <div className="w-[17rem] py-3 bg-gray-950 text-white rounded-full flex gap-3 ps-4 transition duration-300 w-100 hover:scale-105">
-            <div className="flex justify-center items-center gap-2 ">
-              Töltsd le a CV-m! <FaArrowRight />
+          <a href="/CV_Jaczenko_Benedek.pdf" className="pe-2" download={true}>
+            <div className="w-[16rem] py-3 bg-gray-950 text-white rounded-full flex gap-3 ps-4 transition duration-300 w-100 hover:scale-105 items-center justify-center">
+              <div className="text-white border-gray-500 flex items-center justify-between gap-3">
+                <div className="flex justify-center items-center gap-2 ">
+                  Download my CV!
+                </div>
+
+                <FaDownload className="h-4 w-4" />
+              </div>
             </div>
-            <div className="text-white border-l-[1px] border-gray-500 flex ps-2 items center justify-between">
-              <a href="/JB_CV_HU.pdf" className="pe-2" download={true}>
-                <img
-                  src={hu.src}
-                  alt="hu"
-                  className="w-6 h-6 border border-black/10 rounded-[100%] transition duration-300 hover:scale-125"
-                />
-              </a>
-              <a href="/JB_CV_EN.pdf" className="pe-2" download={true}>
-                <img
-                  src={en.src}
-                  alt="hu"
-                  className="w-6 h-6 border border-black/10 rounded-[100%] transition duration-300 hover:scale-125 "
-                />
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
 
         <div className="flex gap-3.5 mx-auto">

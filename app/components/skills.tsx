@@ -28,7 +28,7 @@ export default function Skills() {
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Képességeim");
+      setActiveSection("Skills");
     }
   }, [inView, setActiveSection, timeOfLastClick]);
   return (
@@ -37,7 +37,7 @@ export default function Skills() {
       className="mb-16 max-w-[53rem] scroll-mt-16 mt-8 text-center sm:mb-8"
       id="skills"
     >
-      <SectionHeader cim="képességeim:" />
+      <SectionHeader cim="Skills:" />
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {kepessegek.map((nev, i) => (
           <motion.li

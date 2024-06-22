@@ -3,23 +3,23 @@ import ecommerce from "@/public/ecommerce.png";
 import mtaguessthesong from "@/public/mtaguessthesong.png";
 export const links = [
   {
-    name: "Kezdőlap",
+    name: "Home",
     url: "#home",
   },
   {
-    name: "Rólam",
+    name: "About me",
     url: "#about",
   },
   {
-    name: "Képességeim",
+    name: "Skills",
     url: "#skills",
   },
   {
-    name: "Projektek",
+    name: "Projects",
     url: "#projects",
   },
   {
-    name: "Kapcsolat",
+    name: "Contact",
     url: "#contact",
   },
 ] as const;
@@ -27,25 +27,25 @@ export const links = [
 
 export const projektjeim = [
   {
-    nev: "E-commerce web app",
+    nev: "Full-stack E-commerce web application",
     leiras:
-      "Felhasználók a már nem használt dolgaikat el tudják adni. (WIP)",
+      "Users can sell their old/new unused items. Features Authentication, Admin panel, Product management.",
     tags: ["React", "Next.js", "MySQL", "Tailwind", "Prisma", "MySQL", "ShadCN UI", "Clerk"],
     imageUrl: ecommerce,
     repo: "https://github.com/racerooni/grabkeys"
   },
   {
-    nev: "MTA - Guess the map",
+    nev: "Quiz game for a multi-player game",
     leiras:
-      "Játékban lévő pályák kitalálása a hozzájuk fűződő zene alapján.",
+      "Players have to guess the map from the game based on the song playing.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "ShadCN UI"],
     imageUrl: mtaguessthesong,
     repo: "https://github.com/racerooni/mta-guess-the-map"
   },
   {
-    nev: "Portfólió",
+    nev: "Portfolio",
     leiras:
-      "Jelenlegi portfólió weboldal.",
+      "Current portfolio website. Picked up Framer-motion while developing this website.",
     tags: ["React", "Next.js", "Tailwind", "Framer-Motion"],
     imageUrl: portfolio,
     repo: "https://github.com"

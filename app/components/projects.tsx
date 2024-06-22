@@ -28,12 +28,12 @@ export default function Projects() {
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Projektek");
+      setActiveSection("Projects");
     }
   }, [inView, setActiveSection, timeOfLastClick]);
   return (
     <section id="projects" className="scroll-mt-16" ref={ref}>
-      <SectionHeader cim="Projektjeim:" />
+      <SectionHeader cim="My projects:" />
       <div className="flex flex-col gap-4">
         {projektjeim.map((projekt, i) => (
           <motion.div
