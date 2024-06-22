@@ -54,10 +54,11 @@ export default function Intro() {
       >
         <span className="font-bold">Hi, I am Benedek.</span> A{" "}
         <span className="italic">Full-stack</span> web developer. I am glad that
-        you visited my portfolio page. The main technology that I'm using in my
-        everyday life is <span className="underline">React(Next.js)</span>. As a
-        <span className="font-bold">Full-stack</span> developer my goal is to
-        deliver the most user-friendly and reliable web-applications possible.
+        you visited my portfolio page. The main technology that I&apos;m using
+        in my everyday life is <span className="underline">React(Next.js)</span>
+        . As a<span className="font-bold">Full-stack</span> developer my goal is
+        to deliver the most user-friendly and reliable web-applications
+        possible.
       </motion.p>
       <motion.div
         className="flex justify-center w-1/2 mx-auto flex-col gap-3.5"

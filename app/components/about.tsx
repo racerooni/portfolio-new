@@ -36,7 +36,8 @@ export default function About() {
         fields software development has, this one aroused my interest the most,
         since it offers new challenges, new things to learn every once in a
         while. I am always eager to learn new frameworks as they pop up from
-        nowhere. So far the frameworks/technologies I've worked with include:{" "}
+        nowhere. So far the frameworks/technologies I&apos;ve worked with
+        include:{" "}
         <span className="underline">
           TypeScript, React, Next.JS, MySQL, Prisma, Node.js{" "}
         </span>
