@@ -20,7 +20,7 @@ export default function ActiveSectionContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [ActiveSection, setActiveSection] = useState<SectionName>("Kezdőlap");
+  const [ActiveSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
 
   return (
